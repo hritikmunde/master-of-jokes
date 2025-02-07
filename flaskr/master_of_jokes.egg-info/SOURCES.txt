@@ -1,0 +1,10 @@
+pyproject.toml
+flaskr/__init__.py
+flaskr/auth.py
+flaskr/db.py
+flaskr/jokes.py
+flaskr/master_of_jokes.egg-info/PKG-INFO
+flaskr/master_of_jokes.egg-info/SOURCES.txt
+flaskr/master_of_jokes.egg-info/dependency_links.txt
+flaskr/master_of_jokes.egg-info/requires.txt
+flaskr/master_of_jokes.egg-info/top_level.txt

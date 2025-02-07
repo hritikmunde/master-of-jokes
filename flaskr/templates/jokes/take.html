@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Take a Joke</h1>
+{% endblock %} {% block content %} {% if g.user['joke_balance'] <= 0 %}
+<div class="alert">
+  <p>Your joke balance is too low! Please leave some jokes first.</p>
+  <a href="{{ url_for('jokes.leave_joke') }}" class="button">Leave a Joke</a>
+</div>
+{% elif jokes %}
+<ul>
+  {% for joke in jokes %}
+  <li class="joke-card">
+    <h3>{{ joke['title'] }}</h3>
+    <!-- <p>{{ joke['body'] }}</p> -->
+    <p>By: {{ joke['author_nickname'] }}</p>
+    <p>Current Rating: {{ "%.1f"|format(joke['rating']|float) }}</p>
+
+    {% if joke['id'] not in taken_jokes %}
+    <form
+      action="{{ url_for('jokes.take_single', id=joke['id']) }}"
+      method="post"
+    >
+      <button type="submit">Take This Joke</button>
+    </form>
+    {% else %}
+    <a href="{{ url_for('jokes.view_joke', id=joke['id']) }}">view joke</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No jokes available from other users right now.</p>
+{% endif %} {% endblock %}

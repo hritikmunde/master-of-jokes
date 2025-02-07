@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master of Jokes</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav>
+      {% if g.user %}
+      <p>Hello, {{ g.user['nickname'] }}!</p>
+      {% if g.user['role'] == 'Moderator' %}
+      <a href="{{ url_for('moderator.dashboard') }}">Moderator Dashboard</a>
+      <a href="{{ url_for('moderator.manage_jokes') }}">Manage Jokes</a>
+      <div class="dropdown">
+        <button class="dropbtn">Logging Level</button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('logging.set_level', level='DEBUG') }}">DEBUG</a>
+          <a href="{{ url_for('logging.set_level', level='INFO') }}">INFO</a>
+          <a href="{{ url_for('logging.set_level', level='WARNING') }}"
+            >WARNING</a
+          >
+          <a href="{{ url_for('logging.set_level', level='ERROR') }}">ERROR</a>
+          <a href="{{ url_for('logging.set_level', level='CRITICAL') }}"
+            >CRITICAL</a
+          >
+        </div>
+      </div>
+      {% endif %}
+      <a href="{{ url_for('jokes.my_jokes') }}">My Jokes</a>
+      <a href="{{ url_for('jokes.leave_joke') }}">Create Joke</a>
+      <a href="{{ url_for('jokes.take_joke') }}">Take Joke</a>
+      <a href="{{ url_for('auth.logout') }}">Log Out</a>
+      {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <a href="{{ url_for('auth.login') }}">Log In</a>
+      {% endif %}
+    </nav>
+
+    <section class="content">
+      <header>{% block header %}{% endblock %}</header>
+      {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %} {% block content %}{% endblock %}
+    </section>
+  </body>
+</html>

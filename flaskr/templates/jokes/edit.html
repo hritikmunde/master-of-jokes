@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Edit Joke</h1>
+{% endblock %} {% block content %}
+<form method="post">
+  <label for="body">Joke Body</label>
+  <textarea name="body" id="body" required>{{ joke['body'] }}</textarea>
+
+  <input type="submit" value="Update Joke" />
+</form>
+{% endblock %}

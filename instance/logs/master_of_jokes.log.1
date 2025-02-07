@@ -1,0 +1,112 @@
+2024-12-17 20:34:06,504 - INFO - Logging setup complete.
+2024-12-17 20:34:11,309 - INFO - Logging setup complete.
+2024-12-17 20:34:22,364 - ERROR - Exception on /auth/login [POST]
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/auth.py", line 67, in login
+    current_app.logger.info(f"User logged in: {user.email}")
+                                               ^^^^^^^^^^
+AttributeError: 'sqlite3.Row' object has no attribute 'email'
+2024-12-17 20:35:00,704 - INFO - Logging setup complete.
+2024-12-17 20:35:02,525 - INFO - Logging setup complete.
+2024-12-17 20:35:16,451 - INFO - User logged in: test@gmail.com
+2024-12-17T20:37:18-0500 - flaskr - INFO - Logging setup complete.
+2024-12-17T20:37:55-0500 - flaskr - INFO - Logging setup complete.
+2024-12-17T20:37:55-0500 - flaskr - INFO - Application starting up
+2024-12-17T20:37:59-0500 - flaskr - INFO - Logging setup complete.
+2024-12-17T20:37:59-0500 - flaskr - INFO - Application starting up
+2024-12-17T20:38:00-0500 - flaskr - ERROR - Exception on /jokes/my_jokes [GET]
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 92, in before_request
+    from .logging_utils import log_request
+ImportError: cannot import name 'log_request' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+2024-12-17T20:38:00-0500 - flaskr - ERROR - Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 92, in before_request
+    from .logging_utils import log_request
+ImportError: cannot import name 'log_request' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 97, in after_request
+    from .logging_utils import log_response
+ImportError: cannot import name 'log_response' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+2024-12-17T20:38:04-0500 - flaskr - ERROR - Exception on /jokes/my_jokes [GET]
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 92, in before_request
+    from .logging_utils import log_request
+ImportError: cannot import name 'log_request' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+2024-12-17T20:38:04-0500 - flaskr - ERROR - Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 92, in before_request
+    from .logging_utils import log_request
+ImportError: cannot import name 'log_request' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 941, in finalize_request
+    response = self.process_response(response)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1319, in process_response
+    response = self.ensure_sync(func)(response)
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 97, in after_request
+    from .logging_utils import log_response
+ImportError: cannot import name 'log_response' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)
+2024-12-17T20:38:14-0500 - flaskr - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 915, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/mattgacek/Desktop/SE1/Team2/venv/lib/python3.13/site-packages/flask/app.py", line 1291, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/mattgacek/Desktop/SE1/Team2/flaskr/__init__.py", line 92, in before_request
+    from .logging_utils import log_request
+ImportError: cannot import name 'log_request' from 'flaskr.logging_utils' (/Users/mattgacek/Desktop/SE1/Team2/flaskr/logging_utils.py)

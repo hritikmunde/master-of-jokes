@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 style="text-align: center;">Leave a Joke</h1>
+{% endblock %}
+
+{% block content %}
+<div class="joke-form-container">
+  <form method="post" class="joke-form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea id="body" name="body" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</div>
+{% endblock %}

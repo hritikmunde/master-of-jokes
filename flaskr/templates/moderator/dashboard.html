@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Moderator Dashboard</h1>
+<nav>
+  <a href="{{ url_for('moderator.manage_jokes') }}" class="button"
+    >Manage Jokes</a
+  >
+</nav>
+{% endblock %} {% block content %}
+<div class="moderator-panel">
+  <h2>User Management</h2>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Nickname</th>
+      <th>Role</th>
+      <th>Balance</th>
+      <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user['email'] }}</td>
+      <td>{{ user['nickname'] }}</td>
+      <td>{{ user['role'] }}</td>
+      <td>
+        <form
+          action="{{ url_for('moderator.edit_balance', user_id=user['id']) }}"
+          method="post"
+          style="display: inline"
+        >
+          <input
+            type="number"
+            name="balance"
+            value="{{ user['joke_balance'] }}"
+            min="0"
+          />
+          <input type="submit" value="Update" class="button" />
+        </form>
+      </td>
+      <td>
+        <form
+          action="{{ url_for('moderator.toggle_role', user_id=user['id']) }}"
+          method="post"
+          style="display: inline"
+        >
+          <input
+            type="submit"
+            value="{% if user['role'] == 'Moderator' %}Remove Moderator{% else %}Make Moderator{% endif %}"
+            class="button"
+          />
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

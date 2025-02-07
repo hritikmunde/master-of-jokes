@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Joke Management</h1>
+{% endblock %} {% block content %}
+<div class="moderator-panel">
+  <h2>All Jokes</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Rating</th>
+      <th>Created</th>
+      <th>Actions</th>
+    </tr>
+    {% for joke in jokes %}
+    <tr>
+      <td>{{ joke['title'] }}</td>
+      <td>{{ joke['author_nickname'] }}</td>
+      <td>{{ "%.1f"|format(joke['rating']|float) }}</td>
+      <td>{{ joke['created'].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+      <td>
+        <a
+          href="{{ url_for('moderator.edit_joke', joke_id=joke['id']) }}"
+          class="button"
+          >Edit</a
+        >
+        <form
+          action="{{ url_for('moderator.delete_joke', joke_id=joke['id']) }}"
+          method="post"
+          style="display: inline"
+        >
+          <input
+            type="submit"
+            value="Delete"
+            class="button danger"
+            onclick="return confirm('Are you sure?');"
+          />
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: master_of_jokes
+Version: 1.0.0
+Summary: A Flask web application for sharing and rating jokes
+Requires-Dist: flask
+Requires-Dist: click

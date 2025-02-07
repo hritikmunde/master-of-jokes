@@ -1,0 +1,35 @@
+2024-12-17 17:23:34,801 - INFO - _internal - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-17 17:23:34,801 - INFO - _internal - [33mPress CTRL+C to quit[0m
+2024-12-17 17:23:34,938 - INFO - _internal -  * Restarting with watchdog (fsevents)
+2024-12-17 17:23:35,050 - WARNING - _internal -  * Debugger is active!
+2024-12-17 17:23:35,057 - INFO - _internal -  * Debugger PIN: 630-519-968
+2024-12-17 17:23:52,286 - WARNING - __init__ - Unauthorized access attempt to index page.
+2024-12-17 17:23:52,287 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:23:52] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-17 17:23:52,307 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:23:52] "GET /auth/login HTTP/1.1" 200 -
+2024-12-17 17:23:52,372 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:23:52] "GET /static/style.css HTTP/1.1" 200 -
+2024-12-17 17:23:52,392 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:23:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-17 17:24:24,611 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:24] "POST /auth/login HTTP/1.1" 200 -
+2024-12-17 17:24:24,631 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-12-17 17:24:40,206 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:40] "POST /auth/login HTTP/1.1" 200 -
+2024-12-17 17:24:40,219 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-12-17 17:24:45,574 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:45] "GET /auth/register HTTP/1.1" 200 -
+2024-12-17 17:24:45,603 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:24:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-12-17 17:25:05,789 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:05] "[32mPOST /auth/register HTTP/1.1[0m" 302 -
+2024-12-17 17:25:05,794 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:05] "GET /auth/login HTTP/1.1" 200 -
+2024-12-17 17:25:05,820 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2024-12-17 17:25:27,538 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:27] "[35m[1mPOST /auth/login HTTP/1.1[0m" 500 -
+2024-12-17 17:25:27,556 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:27] "GET /auth/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-17 17:25:27,559 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:27] "GET /auth/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-17 17:25:27,562 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:27] "GET /auth/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-17 17:25:27,583 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:25:27] "[36mGET /auth/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-17 17:26:16,852 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:26:16] "GET /auth/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-17 17:28:29,974 - INFO - _internal -  * Detected change in '/Users/voldemort/Documents/Software Engineering/Team2/flaskr/auth.py', reloading
+2024-12-17 17:28:30,707 - INFO - _internal -  * Restarting with watchdog (fsevents)
+2024-12-17 17:28:30,936 - WARNING - _internal -  * Debugger is active!
+2024-12-17 17:28:30,942 - INFO - _internal -  * Debugger PIN: 630-519-968
+2024-12-17 17:28:37,508 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:28:37] "[35m[1mPOST /auth/login HTTP/1.1[0m" 500 -
+2024-12-17 17:28:37,534 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:28:37] "[36mGET /auth/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-17 17:28:37,534 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:28:37] "[36mGET /auth/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-17 17:28:37,540 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:28:37] "[36mGET /auth/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-12-17 17:28:37,560 - INFO - _internal - 127.0.0.1 - - [17/Dec/2024 17:28:37] "[36mGET /auth/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block header %}
+{% endblock %} 
+{% block content %}
+<div class="joke-card">
+  <h3>{{ joke['title'] }}</h3>
+  <p>By: {{ joke['nickname'] }}</p>
+  <p>Created At: {{ joke['created'].strftime('%Y-%m-%d %H:%M:%S') }}</p>
+  <p>Current Rating: {{ "%.1f"|format(joke['rating']|float) }}</p>
+
+
+
+{% if joke["author_id"] == g.user["id"] %}
+    <div class="joke-actions">
+      <a href="{{ url_for('jokes.edit', id=joke['id']) }}" class="button">Edit</a>
+      <form
+        action="{{ url_for('jokes.delete', id=joke['id']) }}"
+        method="post"
+        style="display: inline"
+      >
+        <button type="submit" class="button danger">Delete</button>
+      </form>
+    </div>
+  {% else %}
+
+  <form
+    action="{{ url_for('jokes.rate_joke', id=joke['id']) }}"
+    method="post"
+    class="rating-form"
+  >
+    <label for="rating-{{ joke['id'] }}">Rate this joke (1-5):</label>
+    <select name="rating" id="rating-{{ joke['id'] }}" required>
+      <option value="1" {% if joke['user_rating'] == 1 %}selected{% endif %}>1</option>
+      <option value="2" {% if joke['user_rating'] == 2 %}selected{% endif %}>2</option>
+      <option value="3" {% if joke['user_rating'] == 3 %}selected{% endif %}>3</option>
+      <option value="4" {% if joke['user_rating'] == 4 %}selected{% endif %}>4</option>
+      <option value="5" {% if joke['user_rating'] == 5 %}selected{% endif %}>5</option>
+    </select>
+      <button type="submit">{% if joke['user_rating'] %}Update Rating{% else %}Submit Rating{% endif %}</button>
+  </form>
+  
+{% endif %}
+
+<hr/>
+  <p>{{ joke['body'] }}</p>
+<hr/>
+</div>
+{% endblock %}

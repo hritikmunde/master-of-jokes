@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block header %}
+<h1>My Jokes</h1>
+<div class="joke-stats">
+  <p>Your Joke Balance: {{ g.user['joke_balance'] }}</p>
+</div>
+{% endblock %} {% block content %} {% if jokes %}
+<ul>
+  {% for joke in jokes %}
+  <li class="joke-card">
+    <h3>{{ joke['title'] }}</h3>
+    <!-- <p>{{ joke['body'] }}</p> -->
+    <div class="joke-meta">
+      <p>Average Rating: {{ "%.1f"|format(joke['rating']|float) }}</p>
+      <p>Times Taken: {{ joke['times_taken']|default(0) }}</p>
+      <p>Created: {{ joke['created'].strftime('%Y-%m-%d %H:%M:%S') }}</p>
+      <a href="{{ url_for('jokes.view_joke', id=joke['id']) }}">view joke</a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>You haven't added any jokes yet.</p>
+<a href="{{ url_for('jokes.leave_joke') }}" class="button">Leave A Joke</a>
+{% endif %} {% endblock %}
